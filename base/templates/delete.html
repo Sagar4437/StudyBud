@@ -3,8 +3,8 @@
 {% block content_block %}
     <form action="" method="post">
         {% csrf_token %}
-        Are you Sure to delete {{obj}} item?
-        <a href='{{request.META.HTTP_REFERER}}'>Go bacck </a>
+        Are you Sure to delete "{{obj}}" item?<br>
+        <a href='{{request.META.HTTP_REFERER}}'>Go back </a>
         <input type="submit" value="Confirm"/>
 
     </form>
