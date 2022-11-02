@@ -28,8 +28,11 @@
             {% for room in rooms %}
                 <span> 
                     @{{room.host.username}} {{room.topic.name}}
+
+                    {% if request.user == room.host %}
                     <a href="{% url 'update-room' room.id %}">Edit </a> 
                     <a href="{% url 'delete-room' room.id %}">Delete </a>
+                    {% endif %}
                 </span>
                 <br>
                 {{room.id}}-<a href="{% url 'room' room.id %}">{{room.name}}</a><br><br>

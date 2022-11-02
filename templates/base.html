@@ -10,6 +10,10 @@
     </head>
     <body>
         {% include 'navbar.html' %}
+        {% for message in messages %}
+            {{message.tags | title}}:{{message}}
+        {% endfor %}
+
         {% block content_block %}{% endblock content_block %}
         
         <script src="" async defer></script>
