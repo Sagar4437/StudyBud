@@ -7,32 +7,14 @@
 </style>
 
 <div class="home-container">
-  <div class="">
-    <h3>Browse Topics</h3>
-    <hr />
-    <div>
-      <a href="{% url 'home' %}">All</a>
-    </div>
-    {% for topic in topics %}
-    <div>
-      <a href="{% url 'home' %}?q={{topic.name}}">{{topic.name}}</a>
-    </div>
-    {% endfor %}
+  <div>
+    {% include 'topics_component.html' %}
   </div>
 
   <div>
     <h5>{{room_count}} rooms available</h5>
     <a href="{% url 'create-room' %}">Create Room </a><br /><br /><br />
-    {% for room in rooms %}
-    <span>
-      @{{room.host.username}} {{room.topic.name}} {% if request.user == room.host %}
-      <a href="{% url 'update-room' room.id %}">Edit </a>
-      <a href="{% url 'delete-room' room.id %}">Delete </a>
-      {% endif %}
-    </span>
-    <br />
-    {{room.id}}-<a href="{% url 'room' room.id %}">{{room.name}}</a><br /><br />
-    {% endfor %}
+    {% include 'feed_component.html' %}
   </div>
 
   <div>
