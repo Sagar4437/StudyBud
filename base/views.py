@@ -97,6 +97,15 @@ def room(request,pk):
 
     return render(request,'room.html',context)
 
+def userProfile(request,pk):
+    user = User.objects.get(id=pk)
+    rooms = user.room_set.all()   # type: ignore
+    context ={
+        'user':user,
+        'rooms':rooms
+    }
+    return render(request,'profile.html', context)
+
 @login_required(login_url='login')
 def createRoom(request):
     form = RoomForm()
