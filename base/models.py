@@ -33,5 +33,5 @@ class Message(models.Model):
     def __str__(self) -> str:
         return self.body[:50]
     
-    # class Meta:
-    #     ordering = ['-created']
+    class Meta:
+        ordering = ['-created']

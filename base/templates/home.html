@@ -1,43 +1,52 @@
-{% extends 'base.html' %}
+{% extends 'base.html' %} {% block content_block %}
+<style>
+  .home-container {
+    display: grid;
+    grid-template-columns: 1fr 3fr 1fr;
+  }
+</style>
 
-{% block content_block %}
-    <style>
-        .home-container{
-            display: grid;
-            grid-template-columns: 1fr 3fr;
-        }
-    </style>
-
-    <div class='home-container'>
-        <div class="">
-            <h3> Browse Topics</h3>
-            <hr>
-            <div>
-                <a href="{% url 'home' %}">All</a>
-            </div>
-            {% for topic in topics %}
-                <div>
-                    <a href="{% url 'home' %}?q={{topic.name}}">{{topic.name}}</a>
-                </div>
-            {% endfor %}
-        </div>
-
-        <div>
-            <h5>{{room_count}} rooms available</h5>
-            <a href="{% url 'create-room' %}">Create Room </a><br><br><br>
-            {% for room in rooms %}
-                <span> 
-                    @{{room.host.username}} {{room.topic.name}}
-
-                    {% if request.user == room.host %}
-                    <a href="{% url 'update-room' room.id %}">Edit </a> 
-                    <a href="{% url 'delete-room' room.id %}">Delete </a>
-                    {% endif %}
-                </span>
-                <br>
-                {{room.id}}-<a href="{% url 'room' room.id %}">{{room.name}}</a><br><br>
-            {% endfor %}
-        </div>
-        
+<div class="home-container">
+  <div class="">
+    <h3>Browse Topics</h3>
+    <hr />
+    <div>
+      <a href="{% url 'home' %}">All</a>
     </div>
+    {% for topic in topics %}
+    <div>
+      <a href="{% url 'home' %}?q={{topic.name}}">{{topic.name}}</a>
+    </div>
+    {% endfor %}
+  </div>
+
+  <div>
+    <h5>{{room_count}} rooms available</h5>
+    <a href="{% url 'create-room' %}">Create Room </a><br /><br /><br />
+    {% for room in rooms %}
+    <span>
+      @{{room.host.username}} {{room.topic.name}} {% if request.user == room.host %}
+      <a href="{% url 'update-room' room.id %}">Edit </a>
+      <a href="{% url 'delete-room' room.id %}">Delete </a>
+      {% endif %}
+    </span>
+    <br />
+    {{room.id}}-<a href="{% url 'room' room.id %}">{{room.name}}</a><br /><br />
+    {% endfor %}
+  </div>
+
+  <div>
+    <h3>Recent Activity</h3>
+    {% for message in room_messages %}
+    <div>
+      <small>@{{message.user}} {{message.created | timesince}}</small>
+      <small>replied to "{{message.room}}"</small>
+      <p>{{message}}</p>
+        {% if request.user == message.user %}
+        <a href="{% url 'delete-message' message.id %}">Delete-message</a>
+        {% endif %}
+    </div>
+    {% endfor %}
+  </div>
+</div>
 {% endblock content_block %}
