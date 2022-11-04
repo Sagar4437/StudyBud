@@ -98,11 +98,15 @@ def room(request,pk):
     return render(request,'room.html',context)
 
 def userProfile(request,pk):
-    user = User.objects.get(id=pk)
+    user = User.objects.get(pk=pk)
     rooms = user.room_set.all()   # type: ignore
+    room_messages = user.message_set.all()  # type: ignore
+    topics = Topic.objects.all()
     context ={
         'user':user,
-        'rooms':rooms
+        'rooms':rooms,
+        'room_messages':room_messages,
+        'topics':topics,
     }
     return render(request,'profile.html', context)
 
