@@ -7,16 +7,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="shortcut icon" href="{% static 'images/favicon.ico' %}" type="image/x-icon" />
     <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+    
     <title>StudyBuddy - Find study partners around the world!</title>
   </head>
 
   <body>
-    
     {% include 'navbar.html' %}
-    {% for message in messages %}
-        {{message.tags | title}}:{{message}}
-    {% endfor %}
 
+    {% include 'Error.html' %}
+    
     {% block content_block %}{% endblock content_block %}
     <script src="{% static 'js/script.js' %}" ></script>
 
