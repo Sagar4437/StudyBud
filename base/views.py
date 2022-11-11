@@ -76,7 +76,8 @@ def home(request):
         'rooms':rooms,
         'topics':topics,
         'room_count': rooms.count(),
-        'room_messages':room_messages
+        'room_messages':room_messages,
+        'q':q
     }
     return render(request,'home.html',context)
 
