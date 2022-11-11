@@ -72,13 +72,3 @@ Logout</a>
     </nav>
   </div>
 </header>
-
-  {% comment %} {% if request.user.is_authenticated %}
-  Hi {{request.user}}<br>
-  <a href="{% url 'logout' %}">Logout</a>
-  {% else %}
-  <a href="{% url 'login' %}">Login</a>
-  <a href="{% url 'register' %}">Register</a>
-  {% endif %}
-
-  <hr /> {% endcomment %}

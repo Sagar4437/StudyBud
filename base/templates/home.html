@@ -1,5 +1,5 @@
-
 {% extends "base.html" %}
+{% load static %}
 {% block content_block %}
     <main class="layout layout--3">
       <div class="container">
@@ -60,7 +60,7 @@
 
       </div>
     </main>
-    {% comment %} <script src="{% static 'css/script.js' %}"></script> {% endcomment %}
+    <script src="{% static 'js/script.js' %}"></script>
 
 
 {% endblock content_block %}
