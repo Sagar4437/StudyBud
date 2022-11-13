@@ -4,11 +4,29 @@
 # StudyBuddy
 </div>
 
+### About StudBud
+#### StudyBud is a social media app for devloper simmilar like a discord where devloper create rooms and contribute to others devlopment queries
+
+#
+
+### Learnings
+1. Start devlopment server
+2. Configure settings.py
+3. DB Design
+4. Custom User Model Design
+5. Authentication and authrisation with Django
+6. Login,Logout,Register Logic.
+7. Template Inheritance
+8. MVT Pattern Design
+9. Many More...
+
+#
+
 ### Cloning the repository
 
 --> Clone the repository using the command below :
 ```bash
-git clone https://github.com/divanov11/StudyBud.git
+git clone https://github.com/Sagar4437/StudyBud.git
 
 ```
 
