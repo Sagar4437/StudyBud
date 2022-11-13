@@ -82,14 +82,15 @@ python manage.py runserver
 <p align="center">
   Feed Home
 </p>
-<img src="https://user-images.githubusercontent.com/72341453/134747262-0a92233d-8010-40f8-84c5-8d94895aac44.PNG">
+<img src="![image](https://user-images.githubusercontent.com/89535768/201521909-e3ce83f0-0b12-4707-aafc-d62dbb5d26d2.png)">
 </td> 
 <td width="50%">
 <br>
 <p align="center">
   Room Conversation Preview
 </p>
-<img src="https://user-images.githubusercontent.com/72341453/134747155-3ca5b55f-b064-4741-aeae-abe90bddf41e.PNG">  
+<img src="![image](https://user-images.githubusercontent.com/89535768/201521956-edeaa640-b0ca-4085-8539-52dd334f6c85.png)
+">  
 </td>
 </table>
 
