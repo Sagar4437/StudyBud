@@ -14,14 +14,12 @@ class User(AbstractUser):
     REQUIRED_FIELDS: list[str] = []
     
 
-
-
-
 class Topic(models.Model):
     name = models.CharField(max_length=200) # group name
 
     def __str__(self) -> str:
         return self.name
+
 
 # Create your models here.
 class Room(models.Model):
@@ -38,6 +36,7 @@ class Room(models.Model):
 
     class Meta:
         ordering = ['-updated','-created']
+
 
 class Message(models.Model):
     user = models.ForeignKey(User,on_delete=models.CASCADE)# one user can do many messages ==> one to many RELATIONSHIP
