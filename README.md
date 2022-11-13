@@ -74,23 +74,7 @@ python manage.py runserver
 
 ### App Preview :
 
-<table width="100%"> 
-<tr>
-<td width="50%">      
-&nbsp; 
-<br>
-<p align="center">
-  Feed Home
-</p>
-<img src="![image](https://user-images.githubusercontent.com/89535768/201521909-e3ce83f0-0b12-4707-aafc-d62dbb5d26d2.png)">
-</td> 
-<td width="50%">
-<br>
-<p align="center">
-  Room Conversation Preview
-</p>
-<img src="![image](https://user-images.githubusercontent.com/89535768/201521956-edeaa640-b0ca-4085-8539-52dd334f6c85.png)
-">  
-</td>
-</table>
+![image](https://user-images.githubusercontent.com/89535768/201521909-e3ce83f0-0b12-4707-aafc-d62dbb5d26d2.png)
+![image](https://user-images.githubusercontent.com/89535768/201521956-edeaa640-b0ca-4085-8539-52dd334f6c85.png)
+
 
