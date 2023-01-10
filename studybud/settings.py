@@ -32,6 +32,7 @@ INSTALLED_APPS = [
 
     # 
     'base',
+    'rest_framework',
     'django_extensions',
 ]
 
@@ -124,7 +125,3 @@ MEDIA_ROOT = Path(BASE_DIR,'static/images/profile')
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-GRAPH_MODELS = {
-  'all_applications': True,
-  'group_models': True,
-}
